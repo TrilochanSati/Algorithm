@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+public class ZeroMatrix {
+
+    public static void main(String[] args) {
+        ZeroMatrix zeroMatrix=new ZeroMatrix();
+       zeroMatrix.zeroMatrix(3,3);
+
+    }
+
+    public  Integer[][] zeroMatrix(int n,int m){
+
+        int[][] matrix={{1,2,3},{4,5,0},{7,0,9}};
+
+        Integer[][] resultMatrix=new Integer[n][m];
+
+        int tempi=-1;
+
+        for(int i=0;i<n;i++) {
+            for (int j = 0; j < m; j++) {
+
+              resultMatrix[i][j]=null;
+
+            }
+        }
+
+
+
+        System.out.println("Orignal Matrix");
+        for(int i=0;i<n;i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        for(int i=0;i<n;i++) {
+            for (int j = 0; j < m; j++){
+                int k=i;
+                int s=0;
+
+                if(i<tempi){
+                    continue;
+                }
+
+               
+
+                if(matrix[i][j]==0){
+                    tempi=i;
+
+                    while (s<n){
+                        resultMatrix[s][j]=0;
+                        s++;
+
+                    }
+                    s=0;
+
+                    j=0;
+                    while (j<m){
+
+                        resultMatrix[i][j]=0;
+                        j++;
+
+                    }
+
+                }
+
+            }
+
+            }
+
+        for(int i=0;i<n;i++) {
+            for (int j = 0; j < m; j++) {
+
+                if(resultMatrix[i][j]==null){
+                    resultMatrix[i][j]=matrix[i][j];
+                }
+
+            }
+            }
+
+
+        System.out.println("Zero Matrix");
+        for(int i=0;i<n;i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(resultMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+return resultMatrix;
+        }
+}
