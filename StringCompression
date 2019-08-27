@@ -1,0 +1,60 @@
+public class StringCompression {
+
+    public static void main(String[] args) {
+        StringCompression stringCompression=new StringCompression();
+
+        System.out.print(stringCompression.stringCompresser("aabcccddddaaak"));
+
+    }
+
+    public  String stringCompresser(String str){
+        int count=1;
+        String strComp="";
+        strComp+=str.charAt(0);
+        char tempre=str.charAt(0);
+
+        for(int i=1;i<=str.length()-1;i++){
+
+            if(str.length()-1==i){
+                if(str.charAt(i)==tempre){
+                    count++;
+                        strComp+=Integer.toString(count);
+
+                }
+                else {
+                    strComp+=Integer.toString(count);
+                    strComp+=str.charAt(i);
+                    strComp+=1;
+
+
+                }
+
+            }
+
+
+
+
+        else     if(str.charAt(i)==tempre){
+                count++;
+
+             }
+
+
+
+
+
+
+            else {
+                 strComp+=Integer.toString(count);
+
+                 strComp+=str.charAt(i);
+
+                count=1;
+            }
+            tempre=str.charAt(i);
+        }
+
+
+                return strComp;
+    }
+}
