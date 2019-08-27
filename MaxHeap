@@ -1,0 +1,27 @@
+public class MaxHeap {
+    
+    
+  public static void  maxHeap(int[] bTree){
+      int p;
+      int temp;
+      for (int i=0;i<bTree.length;i++){
+          p=(i-1)/2;
+          if(p>=0 && bTree[p]<bTree[i]){
+              temp=bTree[p];
+              bTree[p]=bTree[i];
+              bTree[i]=temp;
+              i=p-1;
+          }
+      }
+      
+  }
+
+    public static void main(String[] args) {
+        int[] bTree={35, 33, 42, 10, 14, 19, 27, 44, 26, 31};
+        int[] wCase={12, 11, 13, 5, 6, 87};
+        maxHeap(wCase);
+        for(int i:wCase){
+            System.out.println("i = " + i);
+        }
+    }
+}
