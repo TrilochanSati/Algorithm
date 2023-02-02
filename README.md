@@ -3,8 +3,8 @@ Challenging Algorithm problem solution.
 
 Topics
 
-1.Arrays
-2.Greedy Algorithms
+1.Arrays<br />
+2.Greedy Algorithms<br />
 3.Heaps
 4.Binary Search Trees
 5.Binary Trees
