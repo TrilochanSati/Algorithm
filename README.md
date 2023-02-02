@@ -1,7 +1,7 @@
-# Algorithm
-Challenging Algorithm problem solution.
+# Algorithms
+## Challenging Algorithm problem solution.
 
-Topics
+## Topics
 
 1.Arrays<br />
 2.Greedy Algorithms<br />
