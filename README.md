@@ -5,18 +5,18 @@ Topics
 
 1.Arrays<br />
 2.Greedy Algorithms<br />
-3.Heaps
-4.Binary Search Trees
-5.Binary Trees
-6.Dynamic Programming
-7.Graphs
-8.Advance Algorithms
-9.Linked Lists
-10.Recursion
-11.Searching
-12.Sorting
-13.Stacks
-14.Strings
-15.Tries
+3.Heaps<br />
+4.Binary Search Trees<br />
+5.Binary Trees<br />
+6.Dynamic Programming<br />
+7.Graphs<br />
+8.Advance Algorithms<br />
+9.Linked Lists<br />
+10.Recursion<br />
+11.Searching<br />
+12.Sorting<br />
+13.Stacks<br />
+14.Strings<br />
+15.Tries<br />
 
 
