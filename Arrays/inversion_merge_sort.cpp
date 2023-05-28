@@ -3,107 +3,67 @@
 using namespace std;
 
 
-
-int merge(int arr[],int l,int mid,int r)
+int merge(int arr[],int temp[],int l,int m,int r)
 {
+int i=l,j=m,k=l,cnt=0;
 
-cout<<"mid: "<<mid<<endl;
-int count=0;
-
-int t1=mid+1-l;
-int t2=r-mid;
-
-int temp1[t1];
-int temp2[t2];
-
-for(int i=0;i<t1;i++)
+while(i<=m-1 && j<=r)
 {
-temp1[i]=arr[l+i];
-}
-for(int i=0;i<t2;i++)
+if(arr[i]<=arr[j])
 {
-temp2[i]=arr[mid+1+i];
-}
-int i=0;
-int j=0;
-int k=l;
-
-while(i<t1 && j<t2)
-{
-if(temp1[i]>temp2[j])
-{
-arr[k]=temp2[j];
-j+=1;
-count=count+(mid-i);
+temp[k++]=arr[i++];
 }
 else
 {
-arr[k]=temp1[i];
-i+=1;
+temp[k++]=arr[j++];
+cnt=cnt+(m-i);
+}
 }
 
-k+=1;
-
-}
-
-
-
-while(i<t1)
+while(i<=m-1)
 {
-arr[k]=temp1[i];
-k+=1;
-i+=1;
+temp[k++]=arr[i++];
 }
-
-
-while(j<t2)
+while(j<=r)
 {
-arr[k]=temp2[j];
-k+=1;
-j+=1;
+temp[k++]=arr[j++];
+}
+for(int i=l;i<=r;i++)
+{
+arr[i]=temp[i];
 }
 
-cout<<"count: "<<count<<endl;
+return cnt;
+}
+
+int mergeSort(int arr[],int temp[],int l,int r)
+{
+int count=0;
+if(l<r)
+{
+int mid=(l+r)/2;
+cout<<"mid"<<mid<<endl;
+count+=mergeSort(arr,temp,l,mid);
+count+=mergeSort(arr,temp,mid+1,r);
+count+=merge(arr,temp,l,mid+1,r);
+
+}
 
 return count;
 }
 
-int  mergeSort(int arr[],int l,int r)
-{
-int inCount=0;
-
-int mid=(l+r)/2;
-
-if(l==r)
-{
-return 0;
-}
-
-
-inCount+=mergeSort(arr,l,mid);
-inCount+=mergeSort(arr,mid+1,r);
-inCount+=merge(arr,l,mid,r);
-
-return inCount;
-}
-
-
 int main()
 {
 int arr[]={5,3,2,1,4};
+int temp[5];
+int inversion=mergeSort(arr,temp,0,4);
 
-int n=sizeof(arr)/sizeof(arr[0]);
-
-cout<<"inversion: "<<mergeSort(arr,0,n-1);
-
-cout<<endl;
-
-cout<<"sorted list: "<<endl;
-
-for(int i=0;i<n;i++)
+for(int i=0;i<5;i++)
 {
-cout<<arr[i]<<" ,";
+cout<<arr[i];
 }
-
+cout<<endl;
+cout<<"in:"<<inversion;
 return 0;
 }
+
