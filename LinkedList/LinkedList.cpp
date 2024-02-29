@@ -28,11 +28,12 @@ public:
         }
     }
 
-    void insertAtBeginning(int value){
+    Node* insertAtBeginning(int value){
         Node* newNode=new Node;
         newNode->data=value;
         newNode->next=head;
         head=newNode;
+        return head;
     }
 
     void insertAtEnd(int value)
